@@ -1,11 +1,12 @@
 package org.example.transfer;
 
-public class KTXTMoney implements TMoney{
-
-    private int defaultPay = 30000;
+public class KTXTMoney extends PublicTMoney {
+    public KTXTMoney(int defaultMoney, int per) {
+        super(defaultMoney, per);
+    }
 
     @Override
     public int calc(int distance) {
-        return defaultPay + (distance * 50);
+        return defaultMoney  + (distance * per);
     }
 }

@@ -1,12 +1,16 @@
 package org.example.transfer;
 
-public class BusTMoney implements TMoney{
+public class BusTMoney extends PublicTMoney {
 
-    private int defaultPay = 10000;
-    private int toolPay = 40000;
+    private int toolPay;
+
+    public BusTMoney(int defaultMoney, int per, int toolPay) {
+        super(defaultMoney, per);
+        this.toolPay = toolPay;
+    }
 
     @Override
     public int calc(int distance) {
-        return defaultPay + toolPay + (distance * 10);
+        return defaultMoney + toolPay + (distance * per);
     }
 }
